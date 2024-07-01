@@ -103,45 +103,47 @@ const HomePage = () => {
           Add +
         </Link>
       </div>
-      <table className="project-table">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Project Title</th>
-            <th>Task</th>
-            <th>From Date</th>
-            <th>To Date</th>
-            <th>Status</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filteredProjects.map((project, index) => (
-            <tr key={index}>
-              <td>{project.name}</td>
-              <td>{project.projectTitle}</td>
-              <td>{project.task}</td>
-              <td>{project.fromDate}</td>
-              <td>{project.toDate}</td>
-              <td>{project.status}</td>
-              <td>
-                <button
-                  className="edit-button"
-                  onClick={() => openModal(index)}
-                >
-                  Edit
-                </button>
-                <button
-                  className="delete-button"
-                  onClick={() => handleDelete(index)}
-                >
-                  Delete
-                </button>
-              </td>
+      <div className="media-table">
+        <table className="project-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Project Title</th>
+              <th>Task</th>
+              <th>From Date</th>
+              <th>To Date</th>
+              <th>Status</th>
+              <th>Actions</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {filteredProjects.map((project, index) => (
+              <tr key={index}>
+                <td>{project.name}</td>
+                <td>{project.projectTitle}</td>
+                <td>{project.task}</td>
+                <td>{project.fromDate}</td>
+                <td>{project.toDate}</td>
+                <td>{project.status}</td>
+                <td>
+                  <button
+                    className="edit-button"
+                    onClick={() => openModal(index)}
+                  >
+                    Edit
+                  </button>
+                  <button
+                    className="delete-button"
+                    onClick={() => handleDelete(index)}
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
 
       {/* Modal for Editing */}
       <Modal
